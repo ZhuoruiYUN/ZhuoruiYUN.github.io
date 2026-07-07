@@ -1,0 +1,123 @@
+baseURL = "https://example.com/"
+locale = "en-us"
+title = "Zhuorui Yun"
+theme = "careercanvas"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+[build]
+  writeStats = true
+
+[languages]
+  [languages.en]
+    contentDir = "content"
+    label = "English"
+    weight = 1
+    [languages.en.params]
+      firstName = "Zhuorui"
+      lastName = "Yun"
+      name = "Zhuorui Yun"
+      tagline = "Robotics. Control. Sim-to-real reinforcement learning."
+      hero_description = "I build and study robotic systems across simulation, control, reinforcement learning, and hardware validation."
+      hero_location = "Singapore"
+      resume_url = "/files/Zhuorui_YUN_CV.pdf"
+      collab_tags = ["Robotics", "Reinforcement Learning", "Control", "Aerial Systems"]
+
+[params]
+  firstName = "Zhuorui"
+  lastName = "Yun"
+  name = "Zhuorui Yun"
+  email = "zhuoruiyun040926@gmail.com"
+  profile_image = "/images/profile.jpg"
+  author = "Zhuorui Yun"
+  og_image = "/images/profile.jpg"
+  description = "Robotics, control, and reinforcement learning portfolio."
+  tagline = "Robotics. Control. Sim-to-real reinforcement learning."
+  hero_description = "I build and study robotic systems across simulation, control, reinforcement learning, and hardware validation."
+  hero_location = "Singapore"
+  linkedin_url = "https://www.linkedin.com/in/zhuorui-yun-5675aa2b9/"
+  linkedin_text = "linkedin.com/in/zhuorui-yun-5675aa2b9"
+  github_url = "https://github.com/ZhuoruiYUN"
+  github_text = "github.com/ZhuoruiYUN"
+  calendly_url = ""
+  calendly_height = "700px"
+  copyright = "Zhuorui Yun"
+  resume_url = "/files/Zhuorui_YUN_CV.pdf"
+  resume_url_en = "/files/Zhuorui_YUN_CV.pdf"
+  resume_label = "View CV"
+  sectionPagesMenu = "main"
+  formspreeendpoint = ""
+  pexelsapikey = ""
+
+  [[params.social]]
+    icon = "linkedin-in"
+    url = "https://www.linkedin.com/in/zhuorui-yun-5675aa2b9/"
+  [[params.social]]
+    icon = "github"
+    url = "https://github.com/ZhuoruiYUN"
+
+[menus]
+  [[menus.main]]
+    name = "About"
+    url = "#about"
+    weight = 10
+  [[menus.main]]
+    name = "Skills"
+    url = "#skills"
+    weight = 20
+  [[menus.main]]
+    name = "Experience"
+    url = "#experience"
+    weight = 30
+  [[menus.main]]
+    name = "Projects"
+    pageRef = "/projects"
+    weight = 40
+  [[menus.main]]
+    name = "Writing"
+    pageRef = "/writing"
+    weight = 50
+  [[menus.main]]
+    name = "Contact"
+    url = "#contact"
+    weight = 60
+
+[taxonomies]
+  tag = "tags"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "monokai"
+
+[server]
+  [[server.headers]]
+    for = "/**/*.css"
+    [server.headers.values]
+      Content-Type = "text/css"
+
+[security]
+  [security.funcs]
+    getenv = ['^HUGO_', '^CI$']
+
+[params.color_palettes]
+  [[params.color_palettes.palette]]
+    name = "robotics"
+    main_color = "#1F4E5F"
+    second_color = "#D1495B"
+    third_color = "#2A9D8F"
+  [[params.color_palettes.palette]]
+    name = "lab"
+    main_color = "#293241"
+    second_color = "#EE6C4D"
+    third_color = "#3D5A80"
+  [[params.color_palettes.palette]]
+    name = "field"
+    main_color = "#31572C"
+    second_color = "#BC6C25"
+    third_color = "#277DA1"
+
+[params.pexels]
+  queries = ["robotics lab", "aerial drone", "engineering prototype"]

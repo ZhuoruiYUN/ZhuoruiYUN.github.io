@@ -1,0 +1,35 @@
+---
+title: "Technical Toolkit"
+intro: "Tools and methods I use across robotics, controls, simulation, and engineering documentation."
+technical_groups:
+  - title: "Robotics & Simulation"
+    skills:
+      - name: "Isaac Sim"
+        icon: "cube"
+      - name: "Isaac Lab"
+        icon: "flask"
+      - name: "Crazyflie"
+        icon: "helicopter"
+      - name: "ONNX"
+        icon: "network-wired"
+  - title: "Programming & Analysis"
+    skills:
+      - name: "Python"
+        devicon_name: "python"
+      - name: "MATLAB"
+        icon: "square-root-variable"
+      - name: "Git"
+        devicon_name: "git"
+      - name: "LaTeX"
+        icon: "file-lines"
+  - title: "Engineering Design"
+    skills:
+      - name: "CAD"
+        icon: "compass-drafting"
+      - name: "FEA"
+        icon: "diagram-project"
+      - name: "GD&T"
+        icon: "ruler-combined"
+      - name: "Testing"
+        icon: "chart-line"
+---

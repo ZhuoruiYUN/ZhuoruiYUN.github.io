@@ -1,0 +1,24 @@
+{{ define "main" }}
+  <section class="page-heading">
+    <p class="eyebrow">{{ site.Title }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+  </section>
+
+  {{ if .Pages }}
+    <section class="section compact">
+      <div class="list">
+        {{ range .Pages.ByDate.Reverse }}
+          <article class="list-item">
+            <div>
+              <p class="project-date">{{ .Date.Format "Jan 2006" }}</p>
+              <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+              <p>{{ .Summary }}</p>
+            </div>
+            <a class="read-more" href="{{ .RelPermalink }}">Read</a>
+          </article>
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+{{ end }}
