@@ -18,6 +18,7 @@ hugo server
 ```
 
 Open the local URL printed by Hugo, usually `http://localhost:1313/`.
+The actual location: `https://zhuoruiyun.netlify.app`
 
 ## Edit content
 
