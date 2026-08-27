@@ -11,12 +11,12 @@ domains:
   - icon: "sliders"
     title: "Control Systems"
     description: "Modeling, feedback design, stability reasoning, sensing, and actuation for electromechanical systems."
-  - icon: "helicopter"
-    title: "Aerial Systems"
-    description: "Working with lightweight UAV platforms, hybrid VTOL concepts, and flight-oriented system constraints."
+  - icon: "microchip"
+    title: "Embedded Robotics"
+    description: "Integrating microcontrollers, sensors, motor drivers, communication links, and hardware-facing control code for robotic systems."
   - icon: "gears"
-    title: "Mechanical Design"
-    description: "FEA, dynamic load reasoning, tolerancing, assembly planning, and prototype-centered design review."
+    title: "Mechatronics"
+    description: "Connecting mechanisms, actuators, calibration, signal filtering, and practical debugging into working robotic demonstrations."
   - icon: "chart-line"
     title: "Validation"
     description: "Using plots, experiments, motion-capture data, and structured reports to close the loop between idea and evidence."
@@ -26,6 +26,8 @@ technical:
   - Isaac Sim / Isaac Lab
   - ONNX deployment
   - Crazyflie
+  - Arduino / STM32 / MSPM0
+  - C/C++ / Embedded C
   - CAD / FEA
   - LaTeX
   - Git

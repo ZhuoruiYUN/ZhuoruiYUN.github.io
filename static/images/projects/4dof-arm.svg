@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">4-DOF robotic arm project cover</title>
+  <desc id="desc">A restrained line drawing of a four degree of freedom robotic arm.</desc>
+  <rect width="1200" height="700" fill="#f7f9fb"/>
+  <g fill="none" stroke="#235789" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M250 570h220"/>
+    <path d="M360 570V455"/>
+    <circle cx="360" cy="455" r="44" fill="#eaf2f8"/>
+    <path d="M393 426l145-140"/>
+    <circle cx="538" cy="286" r="42" fill="#eaf2f8"/>
+    <path d="M576 300l160 92"/>
+    <circle cx="736" cy="392" r="38" fill="#eaf2f8"/>
+    <path d="M772 384l120-38"/>
+    <circle cx="892" cy="346" r="32" fill="#eaf2f8"/>
+    <path d="M925 340l78-44M925 355l86 24"/>
+  </g>
+  <g fill="#1f2933" font-family="Arial, sans-serif">
+    <text x="80" y="110" font-size="54" font-weight="700">4-DOF Robotic Arm</text>
+    <text x="80" y="160" font-size="28" fill="#68737d">modeling · kinematics · demo video</text>
+  </g>
+  <path d="M80 600h1040" stroke="#dde3e8" stroke-width="2"/>
+</svg>

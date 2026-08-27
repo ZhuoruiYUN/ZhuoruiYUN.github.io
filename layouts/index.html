@@ -1,0 +1,122 @@
+{{ define "main" }}
+{{ $about := site.GetPage "about" }}
+{{ $skills := site.GetPage "skills" }}
+{{ $experience := site.GetPage "experience" }}
+{{ $technical := site.GetPage "technical" }}
+
+<section class="home-layout">
+  <aside class="profile-panel" aria-label="Profile">
+    <img class="profile-photo" src="{{ site.Params.profile_image }}" alt="Portrait of {{ site.Params.name }}">
+    <h1>{{ site.Params.name }}</h1>
+    <p class="tagline">{{ site.Params.tagline }}</p>
+    <p class="location">{{ site.Params.hero_location }}</p>
+    <div class="profile-links">
+      <a href="mailto:{{ site.Params.email }}">Email</a>
+      <a href="{{ site.Params.github_url }}" target="_blank" rel="noopener">GitHub</a>
+      <a href="{{ site.Params.linkedin_url }}" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="{{ site.Params.resume_url }}" target="_blank" rel="noopener">CV</a>
+    </div>
+  </aside>
+
+  <div class="main-column">
+    <section class="intro-block">
+      <p class="eyebrow">Research Portfolio</p>
+      <h2>{{ site.Params.hero_description }}</h2>
+      {{ with $about }}
+        <p>{{ .Params.intro }}</p>
+      {{ end }}
+    </section>
+
+    {{ with $about }}
+    <section id="research" class="section-block">
+      <h2>Research Interests</h2>
+      <p>{{ .Params.passion_text }}</p>
+      <div class="fact-grid">
+        {{ range first 3 .Params.quickfacts }}
+          <article>
+            <h3>{{ .title }}</h3>
+            <p>{{ .value | markdownify }}</p>
+          </article>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+
+    <section id="projects" class="section-block">
+      <div class="section-title-row">
+        <h2>Selected Projects</h2>
+        <a href="/projects/">All projects</a>
+      </div>
+      <div class="publication-list">
+        {{ range first 4 (sort (where site.RegularPages "Section" "projects") "Weight") }}
+          <article class="project-entry">
+            <div>
+              <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+              {{ with .Params.demo_status }}<p class="project-note">{{ . }}</p>{{ end }}
+              <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
+              {{ with .Params.tags }}
+              <div class="tags">{{ range . }}<span>{{ . }}</span>{{ end }}</div>
+              {{ end }}
+            </div>
+            <time>{{ .Date.Format "2006" }}</time>
+          </article>
+        {{ end }}
+      </div>
+    </section>
+
+    {{ with $experience }}
+    <section id="experience" class="section-block">
+      <h2>{{ .Title }}</h2>
+      <p class="section-intro">{{ .Params.intro }}</p>
+      <div class="timeline-list">
+        {{ range .Params.positions }}
+          <article>
+            <div class="timeline-meta">{{ .period }} · {{ .location }}</div>
+            <h3>{{ .company }}</h3>
+            <p class="role">{{ .role }}</p>
+            <ul>
+              {{ range .bullet_points }}<li>{{ . | markdownify }}</li>{{ end }}
+            </ul>
+          </article>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+
+    {{ with $skills }}
+    <section id="skills" class="section-block">
+      <h2>{{ .Title }}</h2>
+      <p class="section-intro">{{ .Params.intro }}</p>
+      <div class="research-grid">
+        {{ range .Params.domains }}
+          <article>
+            <h3>{{ .title }}</h3>
+            <p>{{ .description }}</p>
+          </article>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+
+    {{ with $technical }}
+    <section id="toolkit" class="section-block">
+      <h2>{{ .Title }}</h2>
+      <div class="toolkit-list">
+        {{ range .Params.technical_groups }}
+          <div>
+            <h3>{{ .title }}</h3>
+            <p>{{ range $index, $skill := .skills }}{{ if $index }}, {{ end }}{{ $skill.name }}{{ end }}</p>
+          </div>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+
+    <section id="contact" class="section-block contact-block">
+      <h2>Contact</h2>
+      <p>I am glad to connect about robotics, reinforcement learning, control systems, and graduate research opportunities.</p>
+      <p><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a> · <a href="{{ site.Params.github_url }}">{{ site.Params.github_text }}</a> · <a href="{{ site.Params.linkedin_url }}">{{ site.Params.linkedin_text }}</a></p>
+    </section>
+  </div>
+</section>
+{{ end }}

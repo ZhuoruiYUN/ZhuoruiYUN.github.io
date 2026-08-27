@@ -1,13 +1,6 @@
 ---
-title: "Writing"
-summary: "Reports, research notes, and technical writing."
+title: "Technical Reports"
+summary: "Selected course reports and engineering writing samples in robotics, sensing, control, and electromechanical systems."
 ---
 
-Use this section for writing samples, research statements, publications, and selected engineering reports.
-
-## Suggested Entries
-
-- Statement of purpose highlights
-- Research plan summaries
-- Writing sample links
-- Project reports and technical notes
+Selected technical reports and writing samples that show my ability to model systems, design experiments, analyze data, and communicate engineering decisions clearly.
