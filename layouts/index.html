@@ -30,14 +30,17 @@
 
     <section id="news" class="section-block news-section">
       <h2>News</h2>
-      <div class="news-list">
+      <ul class="news-list">
         {{ range hugo.Data.news }}
-          <article>
+          <li>
             <time>{{ .date }}</time>
-            <p>{{ .text | markdownify }}</p>
-          </article>
+            <span>{{ .text }}</span>
+            {{ with .links }}
+              <span class="news-links">{{ range $index, $link := . }}{{ if $index }} · {{ end }}<a href="{{ $link.url }}" target="_blank" rel="noopener">{{ $link.label }}</a>{{ end }}</span>
+            {{ end }}
+          </li>
         {{ end }}
-      </div>
+      </ul>
     </section>
 
     {{ with $about }}
