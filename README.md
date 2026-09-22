@@ -13,12 +13,13 @@ brew install hugo
 Then run:
 
 ```bash
-cd personal-website
+cd /Users/yunzhuorui/ZhuoruiYUN.github.io
 hugo server
 ```
 
 Open the local URL printed by Hugo, usually `http://localhost:1313/`.
-The actual location: `https://zhuoruiyun.netlify.app`
+
+Public site: <https://zhuoruiyun.github.io/>
 
 ## Edit content
 
