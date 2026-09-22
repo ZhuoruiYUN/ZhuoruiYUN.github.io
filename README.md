@@ -26,6 +26,7 @@ Public site: <https://zhuoruiyun.github.io/>
 - Home page: `content/_index.md`
 - Projects: `content/projects/`
 - Writing/publications: `content/writing/`
+- Homepage news: `data/news.yaml`
 - Contact: `content/contact/_index.md`
 - Site config: `hugo.toml`
 - Styling: `assets/css/main.css`

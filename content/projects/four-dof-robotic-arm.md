@@ -31,8 +31,3 @@ Compared with a purely conceptual design project, this project is useful for res
 - Practical debugging across electronics, firmware, and mechanism behavior.
 - Software safety design for hardware-facing control code.
 - Clear video-demonstrable behavior suitable for portfolio and cold-email project links.
-
-## Next Updates
-
-- Add a concise mechanism layout and wiring diagram.
-- Add photos or screenshots of the teaching pendant interface and calibration process.

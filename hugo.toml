@@ -23,25 +23,29 @@ title = "Zhuorui Yun"
 
 [menus]
   [[menus.main]]
+    name = "News"
+    url = "/#news"
+    weight = 10
+  [[menus.main]]
     name = "Research"
     url = "/#research"
-    weight = 10
+    weight = 20
   [[menus.main]]
     name = "Projects"
     pageRef = "/projects"
-    weight = 20
+    weight = 30
   [[menus.main]]
     name = "Experience"
     url = "/#experience"
-    weight = 30
+    weight = 40
   [[menus.main]]
     name = "Reports"
     pageRef = "/writing"
-    weight = 40
+    weight = 50
   [[menus.main]]
     name = "Contact"
     url = "/#contact"
-    weight = 50
+    weight = 60
 
 [taxonomies]
   tag = "tags"

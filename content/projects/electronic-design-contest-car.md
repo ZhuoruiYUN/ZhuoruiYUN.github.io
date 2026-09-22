@@ -32,7 +32,3 @@ The core of the balancing system was a **K230 / CanMV vision module** that detec
 - Practical sensor integration, communication debugging, and actuator coordination.
 - Competition-oriented control tuning where reliability matters as much as nominal performance.
 - Team leadership across perception, firmware, electronics, mechanism debugging, and final demo execution.
-
-## Next Updates
-
-- Add system photos, wiring/block diagrams, and selected control-loop plots if available.

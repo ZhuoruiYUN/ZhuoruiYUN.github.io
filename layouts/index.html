@@ -3,6 +3,7 @@
 {{ $skills := site.GetPage "skills" }}
 {{ $experience := site.GetPage "experience" }}
 {{ $technical := site.GetPage "technical" }}
+{{ $projects := sort (where site.RegularPages "Section" "projects") "Weight" }}
 
 <section class="home-layout">
   <aside class="profile-panel" aria-label="Profile">
@@ -20,18 +21,30 @@
 
   <div class="main-column">
     <section class="intro-block">
-      <p class="eyebrow">Research Portfolio</p>
+      <p class="eyebrow">Research Profile</p>
       <h2>{{ site.Params.hero_description }}</h2>
       {{ with $about }}
         <p>{{ .Params.intro }}</p>
       {{ end }}
     </section>
 
+    <section id="news" class="section-block news-section">
+      <h2>News</h2>
+      <div class="news-list">
+        {{ range hugo.Data.news }}
+          <article>
+            <time>{{ .date }}</time>
+            <p>{{ .text | markdownify }}</p>
+          </article>
+        {{ end }}
+      </div>
+    </section>
+
     {{ with $about }}
     <section id="research" class="section-block">
       <h2>Research Interests</h2>
       <p>{{ .Params.passion_text }}</p>
-      <div class="fact-grid">
+      <div class="research-list">
         {{ range first 3 .Params.quickfacts }}
           <article>
             <h3>{{ .title }}</h3>
@@ -48,11 +61,16 @@
         <a href="/projects/">All projects</a>
       </div>
       <div class="publication-list">
-        {{ range first 4 (sort (where site.RegularPages "Section" "projects") "Weight") }}
+        {{ range first 3 $projects }}
+          {{ $project := . }}
           <article class="project-entry">
+            {{ with .Params.featured_image }}
+              <a class="project-thumbnail" href="{{ $project.RelPermalink }}">
+                <img src="{{ . }}" alt="{{ $project.Title }} project image">
+              </a>
+            {{ end }}
             <div>
               <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-              {{ with .Params.demo_status }}<p class="project-note">{{ . }}</p>{{ end }}
               <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
               {{ with .Params.tags }}
               <div class="tags">{{ range . }}<span>{{ . }}</span>{{ end }}</div>
@@ -87,7 +105,7 @@
     <section id="skills" class="section-block">
       <h2>{{ .Title }}</h2>
       <p class="section-intro">{{ .Params.intro }}</p>
-      <div class="research-grid">
+      <div class="domain-list">
         {{ range .Params.domains }}
           <article>
             <h3>{{ .title }}</h3>
