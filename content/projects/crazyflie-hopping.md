@@ -19,8 +19,3 @@ This project explores sim-to-real reinforcement learning for a Crazyflie-based h
 - Developed a robotics workflow connecting simulation, policy export, and hardware tests.
 - Investigated stability, tracking, and sim-to-real transfer challenges.
 - Prepared experimental validation around controlled hopping and flight behavior.
-
-## Next Steps
-
-- Add plots, hardware photos, and benchmark results.
-- Link the final report, code repository, and deployment notes.
