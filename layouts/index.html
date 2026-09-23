@@ -2,6 +2,7 @@
 {{ $about := site.GetPage "about" }}
 {{ $skills := site.GetPage "skills" }}
 {{ $experience := site.GetPage "experience" }}
+{{ $honors := site.GetPage "honors" }}
 {{ $technical := site.GetPage "technical" }}
 {{ $projects := sort (where site.RegularPages "Section" "projects") "Weight" }}
 
@@ -101,6 +102,23 @@
           </article>
         {{ end }}
       </div>
+    </section>
+    {{ end }}
+
+    {{ with $honors }}
+    <section id="honors" class="section-block honors-section">
+      <h2>{{ .Title }}</h2>
+      <ul class="honors-list">
+        {{ range .Params.awards }}
+          <li>
+            <time>{{ .date }}</time>
+            <div>
+              <h3>{{ .title }}</h3>
+              <p>{{ .detail }}</p>
+            </div>
+          </li>
+        {{ end }}
+      </ul>
     </section>
     {{ end }}
 
