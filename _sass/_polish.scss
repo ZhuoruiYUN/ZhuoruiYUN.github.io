@@ -538,7 +538,7 @@ body.fixed-top-nav {
 
 .experience-project {
   margin-bottom: 1.1rem;
-  overflow: hidden;
+  padding: 1rem;
   border: 1px solid var(--global-divider-color);
   border-radius: 8px;
   background: var(--global-card-bg-color);
@@ -555,10 +555,14 @@ body.fixed-top-nav {
   transform: translateY(-1px);
 }
 
+.experience-project > .row {
+  align-items: flex-start;
+}
+
 .experience-project-media {
   display: flex;
   align-items: flex-start;
-  padding: 1rem 0 1rem 1rem;
+  padding-right: 1rem;
 }
 
 .experience-project-media a,
@@ -587,7 +591,7 @@ body.fixed-top-nav {
 }
 
 .experience-project .card-body {
-  padding: 1.25rem 1.4rem 1.25rem 1.25rem;
+  padding: 0;
 }
 
 .experience-project h3 {
@@ -611,6 +615,8 @@ body.fixed-top-nav {
 }
 
 .experience-project-links {
+  display: flex;
+  justify-content: flex-start;
   margin-top: 1rem;
 }
 
@@ -646,13 +652,14 @@ body.fixed-top-nav {
   border: 0;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 575px) {
   .experience-project-media {
-    padding: 1rem 1rem 0;
+    padding-right: 0;
+    padding-bottom: 1rem;
   }
 
   .experience-project .card-body {
-    padding: 1.1rem;
+    padding: 0;
   }
 }
 

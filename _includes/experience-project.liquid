@@ -1,6 +1,6 @@
 <article class="experience-project card">
-  <div class="row no-gutters align-items-stretch">
-    <div class="col-md-4 col-lg-3 experience-project-media">
+  <div class="row align-items-start">
+    <div class="col-sm-4 experience-project-media">
       {% if project.img %}
         <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}" aria-label="{{ project.title }}">
           {%
@@ -13,7 +13,7 @@
         </a>
       {% endif %}
     </div>
-    <div class="col-md-8 col-lg-9">
+    <div class="col-sm-8">
       <div class="card-body">
         <h3 class="mt-0 mb-2">
           <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">{{ project.title }}</a>
