@@ -15,6 +15,17 @@ layout: default
   </header>
 
   <article>
+    {% if page.preview_youtube_id %}
+      <div class="project-demo">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/{{ page.preview_youtube_id }}?playsinline=1&rel=0"
+          title="{{ page.title }} demo"
+          loading="lazy"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    {% endif %}
     {{ content }}
   </article>
 

@@ -3,6 +3,7 @@ layout: page
 title: 4-DOF Robotic Arm Teaching Pendant
 description: Arduino-based teaching pendant with servo control, filtering, calibration, and hardware debugging.
 img: assets/img/4dof-arm-cover.jpg
+preview_youtube_id: djf2O4IeioE
 demo_url: https://youtube.com/shorts/djf2O4IeioE
 demo_label: Demo video
 experience_role: Mechatronics Course Project

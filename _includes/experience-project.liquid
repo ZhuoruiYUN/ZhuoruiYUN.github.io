@@ -1,9 +1,9 @@
 <article class="experience-project card">
   <div class="row no-gutters align-items-stretch">
-    <div class="col-md-5 experience-project-media">
+    <div class="col-md-4 col-lg-3 experience-project-media">
       {% if project.preview_youtube_id %}
         <iframe
-          src="https://www.youtube-nocookie.com/embed/{{ project.preview_youtube_id }}?autoplay=1&mute=1&loop=1&playlist={{ project.preview_youtube_id }}&playsinline=1&rel=0"
+          src="https://www.youtube-nocookie.com/embed/{{ project.preview_youtube_id }}?autoplay=1&mute=1&loop=1&playlist={{ project.preview_youtube_id }}&playsinline=1&controls=0&modestbranding=1&rel=0"
           title="{{ project.title }} demo"
           loading="lazy"
           allow="autoplay; encrypted-media; picture-in-picture"
@@ -15,13 +15,13 @@
             include figure.liquid
             loading="lazy"
             path=project.img
-            sizes="(min-width: 768px) 40vw, 100vw"
+            sizes="(min-width: 992px) 230px, (min-width: 768px) 33vw, 100vw"
             alt=project.title
           %}
         </a>
       {% endif %}
     </div>
-    <div class="col-md-7">
+    <div class="col-md-8 col-lg-9">
       <div class="card-body">
         <h3 class="mt-0 mb-2">
           <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">{{ project.title }}</a>
