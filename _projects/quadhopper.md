@@ -27,4 +27,4 @@ The Isaac Lab rollout below shows repeated stance--flight cycles over a 20 s sim
 
 <img src="/assets/img/quadhopper-simulation-results.png"
      alt="Quadhopper simulation rollout"
-     style="display:block; width:70%; margin:0 auto;">
+     style="display:block; width:50%; margin:0 auto;">
