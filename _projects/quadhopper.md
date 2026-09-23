@@ -25,4 +25,6 @@ Quadhopper is a sim-to-real reinforcement learning project on agile, energy-effi
 
 The Isaac Lab rollout below shows repeated stance--flight cycles over a 20 s simulation window. The traces include position and velocity, attitude and angular velocity, spring displacement and velocity, together with per-rotor thrust and normalized motor inputs.
 
-![Quadhopper simulation rollout showing state, spring response, rotor thrust, and motor commands](/assets/img/quadhopper-simulation-results.png)
+<img src="/assets/img/quadhopper-simulation-results.png"
+     alt="Quadhopper simulation rollout"
+     style="display:block; width:70%; margin:0 auto;">
