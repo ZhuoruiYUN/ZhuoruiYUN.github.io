@@ -3,6 +3,8 @@ layout: page
 title: "Quadhopper: Dynamics-Informed RL for a Monopedal Hopping Quadcopter"
 description: Dynamics-informed reinforcement learning, embedded deployment, and Vicon validation for agile hopping.
 img: assets/img/crazyflie.svg
+demo_url: https://youtu.be/qoDJDObiaZM
+demo_label: Simulation and Hardware Deployment Demo
 importance: 1
 category: research
 ---

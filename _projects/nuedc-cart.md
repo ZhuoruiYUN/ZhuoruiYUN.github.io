@@ -3,6 +3,8 @@ layout: page
 title: NUEDC H-Problem Vision-Based Ball-Balancing Cart
 description: K230/CanMV visual feedback and embedded motion control for a cart-mounted ball-balancing system.
 img: assets/img/nuedc-car-cover.jpg
+demo_url: https://youtu.be/ng9_NiQi5Is
+demo_label: Demo video
 importance: 3
 category: engineering
 ---
