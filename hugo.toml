@@ -23,28 +23,28 @@ title = "Zhuorui Yun"
 
 [menus]
   [[menus.main]]
-    name = "News"
-    url = "/#news"
+    name = "about"
+    url = "/#about"
     weight = 10
   [[menus.main]]
-    name = "Research"
-    url = "/#research"
+    name = "publications"
+    url = "/#publications"
     weight = 20
   [[menus.main]]
-    name = "Projects"
-    pageRef = "/projects"
+    name = "projects"
+    url = "/#projects"
     weight = 30
   [[menus.main]]
-    name = "Experience"
+    name = "experience"
     url = "/#experience"
     weight = 40
   [[menus.main]]
-    name = "Reports"
-    pageRef = "/writing"
+    name = "honors"
+    url = "/#honors"
     weight = 50
   [[menus.main]]
-    name = "Contact"
-    url = "/#contact"
+    name = "cv"
+    url = "/files/Zhuorui_YUN_CV.pdf"
     weight = 60
 
 [taxonomies]

@@ -6,156 +6,113 @@
 {{ $technical := site.GetPage "technical" }}
 {{ $projects := sort (where site.RegularPages "Section" "projects") "Weight" }}
 
-<section class="home-layout">
-  <aside class="profile-panel" aria-label="Profile">
-    <img class="profile-photo" src="{{ site.Params.profile_image }}" alt="Portrait of {{ site.Params.name }}">
-    <h1>{{ site.Params.name }}</h1>
-    <p class="tagline">{{ site.Params.tagline }}</p>
-    <p class="location">{{ site.Params.hero_location }}</p>
-    <div class="profile-links">
-      <a href="mailto:{{ site.Params.email }}">Email</a>
-      <a href="{{ site.Params.github_url }}" target="_blank" rel="noopener">GitHub</a>
-      <a href="{{ site.Params.linkedin_url }}" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="{{ site.Params.resume_url }}" target="_blank" rel="noopener">CV</a>
-    </div>
-  </aside>
-
-  <div class="main-column">
-    <section class="intro-block">
-      <p class="eyebrow">Research Profile</p>
-      <h2>{{ site.Params.hero_description }}</h2>
+<main class="academic-home">
+  <section id="about" class="about-section">
+    <h1><strong>{{ site.Params.firstName }}</strong> {{ site.Params.lastName }}</h1>
+    <figure class="profile-figure">
+      <img src="{{ site.Params.profile_image }}" alt="Portrait of {{ site.Params.name }}">
+      <figcaption>Undergraduate researcher<br>GTIIT, Shantou, China</figcaption>
+    </figure>
+    <div class="about-copy">
       {{ with $about }}
         <p>{{ .Params.intro }}</p>
+        <p>My current work focuses on <strong>sim-to-real reinforcement learning</strong>, agile robotic locomotion, embedded control, and experimental validation. I am interested in building robotic systems that connect principled models, learned policies, and reliable hardware behavior.</p>
       {{ end }}
-    </section>
-
-    <section id="news" class="section-block news-section">
-      <h2>News</h2>
-      <ul class="news-list">
-        {{ range hugo.Data.news }}
-          <li>
-            <time>{{ .date }}</time>
-            <span>{{ .text }}</span>
-            {{ with .links }}
-              <span class="news-links">{{ range $index, $link := . }}{{ if $index }} · {{ end }}<a href="{{ $link.url }}" target="_blank" rel="noopener">{{ $link.label }}</a>{{ end }}</span>
-            {{ end }}
-          </li>
-        {{ end }}
-      </ul>
-    </section>
-
-    {{ with $about }}
-    <section id="research" class="section-block">
-      <h2>Research Interests</h2>
-      <p>{{ .Params.passion_text }}</p>
-      <div class="research-list">
-        {{ range first 3 .Params.quickfacts }}
-          <article>
-            <h3>{{ .title }}</h3>
-            <p>{{ .value | markdownify }}</p>
-          </article>
-        {{ end }}
+      <p>I am pursuing a B.S. in Mechanical Engineering and Robotics at <strong>Guangdong Technion - Israel Institute of Technology (GTIIT)</strong>.</p>
+      <p>Email: <a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></p>
+      <div class="social-links" aria-label="Profile links">
+        <a href="{{ site.Params.github_url }}" target="_blank" rel="noopener">GitHub</a>
+        <a href="{{ site.Params.linkedin_url }}" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="{{ site.Params.resume_url }}" target="_blank" rel="noopener">CV</a>
       </div>
-    </section>
-    {{ end }}
+    </div>
+  </section>
 
-    <section id="projects" class="section-block">
-      <div class="section-title-row">
-        <h2>Selected Projects</h2>
-        <a href="/projects/">All projects</a>
-      </div>
-      <div class="publication-list">
-        {{ range first 3 $projects }}
-          {{ $project := . }}
-          <article class="project-entry">
-            {{ with .Params.featured_image }}
-              <a class="project-thumbnail" href="{{ $project.RelPermalink }}">
-                <img src="{{ . }}" alt="{{ $project.Title }} project image">
-              </a>
-            {{ end }}
-            <div>
-              <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-              <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
-              {{ with .Params.tags }}
-              <div class="tags">{{ range . }}<span>{{ . }}</span>{{ end }}</div>
-              {{ end }}
-            </div>
-            <time>{{ .Date.Format "2006" }}</time>
-          </article>
-        {{ end }}
-      </div>
-    </section>
+  <section id="news" class="academic-section news-section">
+    <h2>news</h2>
+    <ul class="news-list">
+      {{ range hugo.Data.news }}
+        <li>
+          <time>{{ .date }}</time>
+          <span>{{ .text }}{{ with .links }} <span class="news-links">{{ range $index, $link := . }}{{ if $index }} · {{ end }}<a href="{{ $link.url }}" target="_blank" rel="noopener">{{ $link.label }}</a>{{ end }}</span>{{ end }}</span>
+        </li>
+      {{ end }}
+    </ul>
+  </section>
 
-    {{ with $experience }}
-    <section id="experience" class="section-block">
-      <h2>{{ .Title }}</h2>
-      <p class="section-intro">{{ .Params.intro }}</p>
-      <div class="timeline-list">
-        {{ range .Params.positions }}
-          <article>
-            <div class="timeline-meta">{{ .period }} · {{ .location }}</div>
-            <h3>{{ .company }}</h3>
-            <p class="role">{{ .role }}</p>
-            <ul>
-              {{ range .bullet_points }}<li>{{ . | markdownify }}</li>{{ end }}
-            </ul>
-          </article>
-        {{ end }}
-      </div>
-    </section>
-    {{ end }}
-
-    {{ with $honors }}
-    <section id="honors" class="section-block honors-section">
-      <h2>{{ .Title }}</h2>
-      <ul class="honors-list">
-        {{ range .Params.awards }}
-          <li>
-            <time>{{ .date }}</time>
-            <div>
-              <h3>{{ .title }}</h3>
-              <p>{{ .detail }}</p>
-            </div>
-          </li>
-        {{ end }}
-      </ul>
-    </section>
-    {{ end }}
-
-    {{ with $skills }}
-    <section id="skills" class="section-block">
-      <h2>{{ .Title }}</h2>
-      <p class="section-intro">{{ .Params.intro }}</p>
-      <div class="domain-list">
-        {{ range .Params.domains }}
-          <article>
-            <h3>{{ .title }}</h3>
-            <p>{{ .description }}</p>
-          </article>
-        {{ end }}
-      </div>
-    </section>
-    {{ end }}
-
-    {{ with $technical }}
-    <section id="toolkit" class="section-block">
-      <h2>{{ .Title }}</h2>
-      <div class="toolkit-list">
-        {{ range .Params.technical_groups }}
+  <section id="publications" class="academic-section">
+    <h2>selected publications</h2>
+    <ol class="publication-list">
+      {{ range hugo.Data.publications }}
+        <li class="publication-entry">
+          <div class="publication-image"><img src="{{ .image }}" alt="{{ .title }} project preview"></div>
           <div>
-            <h3>{{ .title }}</h3>
-            <p>{{ range $index, $skill := .skills }}{{ if $index }}, {{ end }}{{ $skill.name }}{{ end }}</p>
+            <h3><a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a></h3>
+            <p class="authors">{{ .authors | markdownify }}</p>
+            <p class="venue">{{ .venue | markdownify }}</p>
+            <div class="text-links"><a href="{{ .url }}" target="_blank" rel="noopener">arXiv</a>{{ with .project_url }}<a href="{{ . }}">project</a>{{ end }}</div>
           </div>
-        {{ end }}
-      </div>
-    </section>
-    {{ end }}
+        </li>
+      {{ end }}
+    </ol>
+  </section>
 
-    <section id="contact" class="section-block contact-block">
-      <h2>Contact</h2>
-      <p>I am glad to connect about robotics, reinforcement learning, control systems, and graduate research opportunities.</p>
-      <p><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a> · <a href="{{ site.Params.github_url }}">{{ site.Params.github_text }}</a> · <a href="{{ site.Params.linkedin_url }}">{{ site.Params.linkedin_text }}</a></p>
-    </section>
-  </div>
-</section>
+  <section id="projects" class="academic-section">
+    <div class="section-heading"><h2>selected projects</h2><a href="/projects/">all projects</a></div>
+    <div class="project-list">
+      {{ range $projects }}
+        {{ $project := . }}
+        <article class="project-entry">
+          {{ with .Params.featured_image }}<a class="project-thumbnail" href="{{ $project.RelPermalink }}"><img src="{{ . }}" alt="{{ $project.Title }} project image"></a>{{ end }}
+          <div>
+            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
+            <div class="project-meta"><span>{{ .Date.Format "2006" }}</span>{{ with .Params.tags }}<span>{{ delimit . " · " }}</span>{{ end }}</div>
+            <div class="text-links"><a href="{{ .RelPermalink }}">details</a>{{ with .Params.demo_url }}<a href="{{ . }}" target="_blank" rel="noopener">video</a>{{ end }}</div>
+          </div>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+
+  {{ with $experience }}
+  <section id="experience" class="academic-section">
+    <h2>experience</h2>
+    <div class="experience-list">
+      {{ range .Params.positions }}
+        <article class="experience-entry">
+          <div class="experience-period">{{ .period }}</div>
+          <div>
+            <h3>{{ .company }}</h3>
+            <p class="role">{{ .role }}{{ with .location }} <span>· {{ . }}</span>{{ end }}</p>
+            <ul>{{ range .bullet_points }}<li>{{ . | markdownify }}</li>{{ end }}</ul>
+          </div>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $honors }}
+  <section id="honors" class="academic-section">
+    <h2>honors &amp; awards</h2>
+    <ul class="honors-list">{{ range .Params.awards }}<li><time>{{ .date }}</time><span><strong>{{ .title }}</strong>, {{ .detail }}</span></li>{{ end }}</ul>
+  </section>
+  {{ end }}
+
+  {{ with $skills }}
+  <section id="research" class="academic-section">
+    <h2>research interests</h2>
+    <p class="section-lead">{{ $about.Params.passion_text }}</p>
+    <p class="interest-line">{{ range $index, $domain := .Params.domains }}{{ if $index }} · {{ end }}{{ $domain.title }}{{ end }}</p>
+  </section>
+  {{ end }}
+
+  {{ with $technical }}
+  <section id="toolkit" class="academic-section toolkit-section">
+    <h2>technical toolkit</h2>
+    <div class="toolkit-list">{{ range $group := .Params.technical_groups }}<p><strong>{{ $group.title }}:</strong> {{ range $index, $skill := $group.skills }}{{ if $index }}, {{ end }}{{ $skill.name }}{{ end }}</p>{{ end }}</div>
+  </section>
+  {{ end }}
+</main>
 {{ end }}
