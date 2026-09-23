@@ -17,5 +17,3 @@ Built a 4-DOF robotic arm teaching system using Arduino Uno, MG996R servos, a PC
 - Added EMA filtering to suppress analog noise and servo jitter.
 - Added joint limits and one-click calibration to protect the mechanism and streamline setup.
 - Diagnosed Arduino Uno pin 13 LED interference and reassigned the unstable button input to pin 8.
-
-[Watch the project demo](https://youtube.com/shorts/djf2O4IeioE){: target="_blank"}
