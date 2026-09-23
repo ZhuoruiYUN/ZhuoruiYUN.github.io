@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Received the Most Innovative Project Award at the GTIIT Research Poster Competition.
+🎉 Received the Most Innovative Project Award at the GTIIT Research Poster Competition.
