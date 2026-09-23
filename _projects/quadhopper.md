@@ -5,6 +5,8 @@ description: Dynamics-informed reinforcement learning, embedded deployment, and 
 img: assets/img/crazyflie.svg
 demo_url: https://youtu.be/qoDJDObiaZM
 demo_label: Simulation and Hardware Deployment Demo
+experience_role: Undergraduate Researcher, Bio-inspired Mechatronics Laboratory
+experience_period: Jul 2025 - Present
 importance: 1
 category: research
 ---

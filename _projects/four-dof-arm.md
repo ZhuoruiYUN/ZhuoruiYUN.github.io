@@ -5,6 +5,8 @@ description: Arduino-based teaching pendant with servo control, filtering, calib
 img: assets/img/4dof-arm-cover.jpg
 demo_url: https://youtube.com/shorts/djf2O4IeioE
 demo_label: Demo video
+experience_role: Mechatronics Course Project
+experience_period: Nov 2025 - Dec 2025
 importance: 2
 category: engineering
 ---

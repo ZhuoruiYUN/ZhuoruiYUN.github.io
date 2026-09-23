@@ -1,0 +1,35 @@
+<article class="row align-items-center mb-5 experience-project">
+  <div class="col-md-5 mb-3 mb-md-0">
+    <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}" aria-label="{{ project.title }}">
+      {% if project.img %}
+        {%
+          include figure.liquid
+          loading="lazy"
+          path=project.img
+          sizes="(min-width: 768px) 40vw, 100vw"
+          alt=project.title
+          class="img-fluid rounded z-depth-1"
+        %}
+      {% endif %}
+    </a>
+  </div>
+  <div class="col-md-7">
+    <h3 class="mt-0 mb-2">
+      <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">{{ project.title }}</a>
+    </h3>
+    {% if project.experience_role or project.experience_period %}
+      <p class="mb-2">
+        {% if project.experience_role %}<strong>{{ project.experience_role }}</strong>{% endif %}
+        {% if project.experience_role and project.experience_period %} · {% endif %}
+        {% if project.experience_period %}{{ project.experience_period }}{% endif %}
+      </p>
+    {% endif %}
+    <p>{{ project.description }}</p>
+    <div class="mt-3">
+      <a class="btn btn-sm z-depth-0 mr-2" href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">Details</a>
+      {% if project.demo_url %}
+        <a class="btn btn-sm z-depth-0" href="{{ project.demo_url }}" target="_blank" rel="noopener">{{ project.demo_label | default: "Demo video" }}</a>
+      {% endif %}
+    </div>
+  </div>
+</article>

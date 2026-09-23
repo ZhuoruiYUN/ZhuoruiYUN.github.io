@@ -5,6 +5,8 @@ description: K230/CanMV visual feedback and embedded motion control for a cart-m
 img: assets/img/nuedc-car-cover.jpg
 demo_url: https://youtu.be/ng9_NiQi5Is
 demo_label: Demo video
+experience_role: Team Captain, Provincial Third Prize
+experience_period: Aug 2026
 importance: 3
 category: engineering
 ---
