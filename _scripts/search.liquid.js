@@ -277,7 +277,7 @@ ninja.data = [
         {%- when "x_username" -%}
           {%- assign social_id = "social-x" -%}
           {%- assign social_title = "X" -%}
-          {%- capture social_url %}"https://twitter.com/{{ social[1] }}"{% endcapture -%}
+          {%- capture social_url %}"https://x.com/{{ social[1] }}"{% endcapture -%}
         {%- when "youtube_id" -%}
           {%- assign social_id = "social-youtube" -%}
           {%- assign social_title = "YouTube" -%}
