@@ -1,0 +1,167 @@
+---
+layout: default
+---
+<div class="post">
+  <header class="post-header">
+    {% if site.title == 'blank' %}
+      {% capture full_name %}{{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif %} {{ site.last_name }}{% endcapture %}
+      <h1 class="post-title"
+          data-typing
+          data-typing-first="{{ site.first_name }}"
+          data-typing-middle="{{ site.middle_name | default: '' }}"
+          data-typing-last="{{ site.last_name }}"
+          aria-label="{{ full_name | strip }}">
+        <span class="typing-text" aria-hidden="true"><span class="font-weight-bold">{{ site.first_name }}</span>{% if site.middle_name %} {{ site.middle_name }}{% endif %} {{ site.last_name }}</span><span class="typing-cursor" aria-hidden="true"></span>
+      </h1>
+    {% else %}
+      <h1 class="post-title">{{ site.title }}</h1>
+    {% endif %}
+    <p class="desc">{{ page.subtitle }}</p>
+  </header>
+
+  <article>
+    {% if page.profile %}
+      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}{% if page.profile.hover_image %} has-hover-image{% endif %}">
+        {% if page.profile.image %}
+          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+          {% assign profile_hover_image_path = page.profile.hover_image | prepend: 'assets/img/' %}
+          {% if page.profile.image_circular %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+          {% else %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+          {% endif %}
+          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
+      30vw, 95vw{% endcapture %}
+          {% if page.profile.hover_image %}
+            <div class="profile-image-swap" tabindex="0">
+              {%
+                include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+                cache_bust=true
+              %}
+              {%
+                include figure.liquid loading="lazy" path=profile_hover_image_path class=profile_image_class sizes=sizes alt=page.profile.hover_image
+                cache_bust=true
+              %}
+            </div>
+          {% else %}
+            {%
+              include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+              cache_bust=true
+            %}
+          {% endif %}
+        {% endif %}
+        {% if page.profile.more_info %}
+          <div class="more-info">{{ page.profile.more_info }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="clearfix about-intro">{{ content }}</div>
+
+    <!-- Social -->
+    {% if page.social %}
+      <div class="social">
+        <div class="contact-icons">{% include social.liquid %}</div>
+
+        {% if site.contact_note %}
+          <div class="contact-note">{{ site.contact_note }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <!-- News -->
+    {% if page.announcements and page.announcements.enabled %}
+      <h2>
+        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+      </h2>
+      {% include news.liquid limit=true %}
+    {% endif %}
+
+    <!-- Latest posts -->
+    {% if page.latest_posts and page.latest_posts.enabled %}
+      <h2>
+        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
+      </h2>
+      {% include latest_posts.liquid %}
+    {% endif %}
+
+    <!-- Selected papers -->
+    {% if page.selected_papers %}
+      <h2>
+        <a href="{{ '/research/' | relative_url }}" style="color: inherit">selected paper</a>
+      </h2>
+      {% include selected_papers.liquid %}
+    {% endif %}
+
+    <!-- Education -->
+    {% if page.education %}
+      {% include timeline.liquid entries=site.data.education heading="education" section_id="education-heading" %}
+    {% endif %}
+
+    <!-- Experience -->
+    {% if page.experience %}
+      {% include timeline.liquid entries=site.data.experience heading="experience" section_id="experience-heading" %}
+    {% endif %}
+
+    <!-- Visitor map -->
+    {% if page.visitor_map %}
+      {% include visitor_map.liquid %}
+    {% endif %}
+
+    {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
+      {% include newsletter.liquid center=true %}
+    {% endif %}
+  </article>
+</div>
+
+<script>
+  (function () {
+    const title = document.querySelector('h1.post-title[data-typing]');
+    if (!title) return;
+    const textHost = title.querySelector('.typing-text');
+    if (!textHost) return;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
+      title.classList.add('typing-done');
+      return;
+    }
+
+    const first = title.dataset.typingFirst || '';
+    const middle = title.dataset.typingMiddle || '';
+    const last = title.dataset.typingLast || '';
+    const segments = [];
+    if (first) segments.push({ text: first, bold: true });
+    if (middle) segments.push({ text: ' ' + middle, bold: false });
+    if (last) segments.push({ text: ' ' + last, bold: false });
+
+    const chars = [];
+    segments.forEach((s) => {
+      for (const c of s.text) chars.push({ c, bold: s.bold });
+    });
+
+    textHost.textContent = '';
+    title.classList.add('typing-active');
+
+    let i = 0;
+    function tick() {
+      if (i >= chars.length) {
+        title.classList.remove('typing-active');
+        title.classList.add('typing-done');
+        return;
+      }
+      const { c, bold } = chars[i];
+      const tag = bold ? 'STRONG' : 'SPAN';
+      let last = textHost.lastElementChild;
+      if (!last || last.tagName !== tag) {
+        last = document.createElement(bold ? 'strong' : 'span');
+        if (bold) last.className = 'font-weight-bold';
+        textHost.appendChild(last);
+      }
+      last.textContent += c;
+      i += 1;
+      const delay = c === ' ' ? 70 : 80 + Math.random() * 90;
+      setTimeout(tick, delay);
+    }
+    setTimeout(tick, 220);
+  })();
+</script>

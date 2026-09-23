@@ -1,40 +1,14 @@
-# Personal Website
+# Zhuorui Yun
 
-This is a small Hugo site for an academic and robotics-focused personal website.
+Personal academic website built with the [al-folio](https://github.com/alshedivat/al-folio) Jekyll theme and published at https://zhuoruiyun.github.io/.
 
-## Run locally
+## Update content
 
-Install Hugo first:
+- `_pages/about.md`: biography and homepage settings
+- `_news/`: news items
+- `_bibliography/papers.bib`: publications
+- `_projects/`: project pages
+- `_pages/experience.md` and `_pages/honors.md`: experience and awards
+- `assets/pdf/Zhuorui_YUN_CV.pdf`: CV
 
-```bash
-brew install hugo
-```
-
-Then run:
-
-```bash
-cd /Users/yunzhuorui/ZhuoruiYUN.github.io
-hugo server
-```
-
-Open the local URL printed by Hugo, usually `http://localhost:1313/`.
-
-Public site: <https://zhuoruiyun.github.io/>
-
-## Edit content
-
-- Home page: `content/_index.md`
-- Projects: `content/projects/`
-- Writing/publications: `content/writing/`
-- Homepage news: `data/news.yaml`
-- Contact: `content/contact/_index.md`
-- Site config: `hugo.toml`
-- Styling: `assets/css/main.css`
-
-## Build
-
-```bash
-hugo
-```
-
-The generated static site will be in `public/`.
+The production site is deployed by `.github/workflows/jekyll-pages.yml`.
