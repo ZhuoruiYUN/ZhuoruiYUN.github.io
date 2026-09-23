@@ -532,6 +532,114 @@ body.fixed-top-nav {
   text-decoration: none;
 }
 
+.experience-projects {
+  margin-top: 1.25rem;
+}
+
+.experience-project {
+  margin-bottom: 1.1rem;
+  overflow: hidden;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px;
+  background: var(--global-card-bg-color);
+  box-shadow: 0 10px 26px rgba(31, 41, 51, 0.04);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
+}
+
+.experience-project:hover {
+  border-color: color-mix(in srgb, var(--global-theme-color) 38%, var(--global-divider-color));
+  box-shadow: var(--global-soft-shadow);
+  transform: translateY(-1px);
+}
+
+.experience-project > .row {
+  min-height: 250px;
+}
+
+.experience-project-media {
+  display: flex;
+  align-items: stretch;
+  background: var(--global-muted-bg-color);
+}
+
+.experience-project-media a,
+.experience-project-media figure,
+.experience-project-media picture,
+.experience-project-media img,
+.experience-project-media iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.experience-project-media img {
+  border: 0;
+  object-fit: cover;
+}
+
+.experience-project-media iframe {
+  border: 0;
+}
+
+.experience-project .card-body {
+  padding: 1.25rem 1.4rem;
+}
+
+.experience-project h3 {
+  font-size: 1.04rem;
+  font-weight: 720;
+  line-height: 1.35;
+}
+
+.experience-project h3 a {
+  color: var(--global-text-color);
+  text-decoration: none;
+}
+
+.experience-project h3 a:hover {
+  color: var(--global-theme-color);
+}
+
+.experience-project-meta {
+  color: var(--global-text-color-light);
+  font-size: 0.91rem;
+}
+
+.experience-project-links {
+  margin-top: 1rem;
+}
+
+.experience-project-links .btn {
+  margin-top: 0.25rem;
+  margin-right: 0.35rem;
+  border-color: var(--global-divider-color);
+  border-radius: 999px;
+  color: var(--global-text-color);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.experience-project-links .btn:hover {
+  border-color: var(--global-theme-color);
+  background-color: var(--global-muted-bg-color);
+  color: var(--global-theme-color);
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .experience-project > .row {
+    min-height: 0;
+  }
+
+  .experience-project-media {
+    aspect-ratio: 16 / 9;
+  }
+}
+
 .timeline {
   margin: 0.75rem 0 1.5rem;
   padding: 0;

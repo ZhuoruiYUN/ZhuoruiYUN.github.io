@@ -3,8 +3,9 @@ layout: page
 title: "Quadhopper: Dynamics-Informed RL for a Monopedal Hopping Quadcopter"
 description: Dynamics-informed reinforcement learning, embedded deployment, and Vicon validation for agile hopping.
 img: assets/img/crazyflie.svg
-demo_url: https://youtu.be/qoDJDObiaZM
-demo_label: Simulation and Hardware Deployment Demo
+preview_youtube_id: 7nM_AH9GI1o
+demo_url: https://youtu.be/7nM_AH9GI1o
+demo_label: Simulation vs. Hardware Demo
 experience_role: Undergraduate Researcher, Bio-inspired Mechatronics Laboratory
 experience_period: Jul 2025 - Present
 importance: 1
@@ -20,4 +21,4 @@ Quadhopper is a sim-to-real reinforcement learning project on agile, energy-effi
 - Built a 183 g STM32F103C8T6 platform with MPU6050 sensing and nRF24L01 communication; deployed the ONNX policy at 100 Hz with eight-camera Vicon at 200 Hz.
 - In representative tests, reduced measured electrical power by 30.7% and normalized thrust by 49.8% relative to a tuned PID baseline.
 
-[Watch the simulation and hardware deployment demo](https://youtu.be/qoDJDObiaZM){: target="_blank"}
+[Watch the simulation vs. hardware demo](https://youtu.be/7nM_AH9GI1o){: target="_blank"}
