@@ -8,7 +8,7 @@ demo_url: https://youtube.com/shorts/djf2O4IeioE
 demo_label: Demo video
 experience_role: Mechatronics Course Project
 experience_period: Nov 2025 - Dec 2025
-importance: 2
+importance: 3
 category: engineering
 ---
 

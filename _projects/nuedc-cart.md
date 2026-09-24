@@ -8,7 +8,7 @@ demo_url: https://youtu.be/ng9_NiQi5Is
 demo_label: Demo video
 experience_role: Team Captain, Provincial Third Prize
 experience_period: Aug 2026
-importance: 3
+importance: 4
 category: engineering
 ---
 
