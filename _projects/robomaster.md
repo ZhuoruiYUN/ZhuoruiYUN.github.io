@@ -18,7 +18,7 @@ I work on the sentry robot for Kongfu Team. My responsibilities in RMUL 2026 and
 - **Institution:** Technion
 - **Role:** Sentry Electrical Control Lead
 - **Duration:** October 2025 - March 2026
-- **Result:** Third Prize in the RMUL 3v3 competition
+- **Result:** 🏆 Third Prize in the RMUL 3v3 competition
 
 ### Contributions
 
