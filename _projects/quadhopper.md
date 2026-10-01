@@ -28,3 +28,17 @@ The Isaac Lab rollout below shows repeated stance--flight cycles over a 20 s sim
 <img src="/assets/img/quadhopper-simulation-results.png"
      alt="Quadhopper simulation rollout"
      style="display:block; width:65%; margin:0 auto;">
+
+## 1 m In-Place Hopping Deployment
+
+This deployment demo shows the learned controller on the physical Quadhopper platform during an in-place hopping experiment with a 1 m target height.
+
+<div class="project-demo">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/qoDJDObiaZM?playsinline=1&amp;rel=0"
+    title="Quadhopper 1 m in-place hopping deployment demo"
+    loading="lazy"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>
