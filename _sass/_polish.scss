@@ -652,6 +652,97 @@ body.fixed-top-nav {
   border: 0;
 }
 
+.honors-group {
+  margin-top: 1.75rem;
+}
+
+.honors-group + .honors-group {
+  margin-top: 2.75rem;
+}
+
+.honors-group h2 {
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+}
+
+.honor-entry {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr) auto;
+  gap: 1.4rem;
+  padding: 1.15rem 0;
+  border-top: 1px solid var(--global-divider-color);
+}
+
+.honor-entry:last-child {
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+.honor-date {
+  margin: 0.1rem 0 0;
+  color: var(--global-text-color-light);
+  font-family: $font-mono;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.honor-content h3 {
+  margin: 0 0 0.2rem;
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+
+.honor-content p {
+  margin: 0 0 0.5rem;
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+.honor-content p:last-child {
+  margin-bottom: 0;
+}
+
+.honor-content .honor-issuer {
+  color: var(--global-text-color-light);
+  font-size: 0.88rem;
+}
+
+.honor-link {
+  display: inline-block;
+  margin-top: 0.2rem;
+  font-family: $font-mono;
+  font-size: 0.78rem;
+}
+
+.honor-certificate {
+  width: 5.5rem;
+  align-self: start;
+  color: var(--global-text-color-light);
+  font-size: 0.76rem;
+  text-align: center;
+}
+
+.honor-certificate img {
+  display: block;
+  width: 100%;
+  height: 6.5rem;
+  margin-bottom: 0.25rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 4px;
+  object-fit: contain;
+  background: #fff;
+}
+
+@media (max-width: 575px) {
+  .honor-entry {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.45rem 1rem;
+  }
+
+  .honor-date {
+    grid-column: 1 / -1;
+  }
+}
+
 .project-detail img[data-zoomable] {
   cursor: zoom-in;
   transform-origin: center;
