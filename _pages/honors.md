@@ -19,7 +19,6 @@ nav_order: 5
     </div>
     <a class="honor-certificate" href="/assets/pdf/honors/vice-chancellors-list.pdf" target="_blank" rel="noopener" aria-label="View Vice Chancellor's List certificate (PDF)">
       <img src="/assets/img/honors/vice-chancellors-list.jpg" alt="Vice Chancellor's List certificate" loading="lazy">
-      Certificate
     </a>
   </article>
 
@@ -41,7 +40,6 @@ nav_order: 5
     </div>
     <a class="honor-certificate" href="/assets/pdf/honors/deans-list.pdf" target="_blank" rel="noopener" aria-label="View Dean's List certificate (PDF)">
       <img src="/assets/img/honors/deans-list.jpg" alt="Dean's List certificate" loading="lazy">
-      Certificate
     </a>
   </article>
 </section>
@@ -68,7 +66,6 @@ nav_order: 5
     </div>
     <a class="honor-certificate" href="/assets/pdf/honors/most-innovative-project.pdf" target="_blank" rel="noopener" aria-label="View Most Innovative Project Award certificate (PDF)">
       <img src="/assets/img/honors/most-innovative-project.jpg" alt="Most Innovative Project Award certificate" loading="lazy">
-      Certificate
     </a>
   </article>
 </section>

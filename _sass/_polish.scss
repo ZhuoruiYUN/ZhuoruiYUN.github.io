@@ -714,22 +714,31 @@ body.fixed-top-nav {
 }
 
 .honor-certificate {
+  position: relative;
   width: 5.5rem;
   align-self: start;
-  color: var(--global-text-color-light);
-  font-size: 0.76rem;
-  text-align: center;
 }
 
 .honor-certificate img {
   display: block;
   width: 100%;
   height: 6.5rem;
-  margin-bottom: 0.25rem;
   border: 1px solid var(--global-divider-color);
   border-radius: 4px;
   object-fit: contain;
   background: #fff;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.honor-certificate:hover,
+.honor-certificate:focus-visible {
+  z-index: 1;
+}
+
+.honor-certificate:hover img,
+.honor-certificate:focus-visible img {
+  transform: scale(1.12);
+  box-shadow: var(--global-soft-shadow);
 }
 
 @media (max-width: 575px) {
