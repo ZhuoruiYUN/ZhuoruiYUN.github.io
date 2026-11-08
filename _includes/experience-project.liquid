@@ -28,6 +28,9 @@
         <p class="mb-0">{{ project.description }}</p>
         <div class="experience-project-links">
           <a class="btn btn-sm z-depth-0" href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">Details</a>
+          {% if project.code_url %}
+            <a class="btn btn-sm z-depth-0" href="{{ project.code_url }}" target="_blank" rel="noopener">Code</a>
+          {% endif %}
         </div>
       </div>
     </div>
