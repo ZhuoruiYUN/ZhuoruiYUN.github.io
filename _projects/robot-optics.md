@@ -2,7 +2,8 @@
 layout: page
 title: Vision-Guided Robotic Assembly and Optical Alignment
 description: xArm7 manipulation, RGB-D localization, and contact-based Michelson alignment in MuJoCo and Isaac Sim.
-img: assets/img/robot-optics-scene.png
+img: assets/img/robot-optics-pick-place.gif
+img_alt: MuJoCo Cartesian pick-and-place baseline with the xArm7 robot
 code_url: https://github.com/AIDROL/robot-arm-control/
 experience_role: Robot-Arm Simulation & Control, AIDROL
 experience_period: 2026 - Present
