@@ -9,6 +9,9 @@
   {% if site.last_updated %}
     Last updated: {{ 'now' | date: '%B %d, %Y' }}.
   {% endif %}
+  {% if jekyll.environment == 'production' %}
+    <img class="ml-1" height="18" src="https://hits.sh/zhuoruiyun.github.io.svg?label=Site%20views&amp;color=536675&amp;style=flat" alt="Site views counter" referrerpolicy="no-referrer">
+  {% endif %}
 {% endcapture %}
 
 {% if site.footer_fixed %}

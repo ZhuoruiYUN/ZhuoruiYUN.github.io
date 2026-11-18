@@ -1,9 +1,10 @@
 ---
 layout: page
 title: Vision-Guided Robotic Assembly and Optical Alignment
-description: xArm7 manipulation, RGB-D localization, and contact-based Michelson alignment in MuJoCo and Isaac Sim.
+description: An xArm7 assembles five optical components and uses detector feedback to align a Michelson interferometer in simulation.
 img: assets/img/robot-optics-pick-place.gif
 img_alt: MuJoCo Cartesian pick-and-place baseline with the xArm7 robot
+demo_url: /projects/robot-optics/#assembly-replay
 code_url: https://github.com/AIDROL/robot-arm-control/
 experience_role: Robot-Arm Simulation & Control, AIDROL
 experience_period: 2026 - Present
@@ -11,9 +12,27 @@ importance: 2
 category: research
 ---
 
-This project develops the robot-arm simulation and control pipeline for automated optical experiments. A seven-degree-of-freedom UFACTORY xArm7 assembles optical components, picks up a fine-alignment tool (FAT), adjusts a Michelson interferometer through physical tool contact, and returns the tool before a fresh optical measurement. The implementation spans MuJoCo and native Isaac Sim 5.1 / PhysX, with LightPipes providing simulated optical feedback.
+In this AIDROL project, a seven-axis xArm7 builds a Michelson interferometer and adjusts one mirror until the two light beams produce high-contrast interference fringes. The project uses MuJoCo for manipulation experiments and Isaac Sim 5.1 for the assembly and alignment replay below.
 
-{% include figure.liquid path="assets/img/robot-optics-scene.png" alt="Isaac Sim replay of the xArm7 and assembled optical components" zoomable=true caption="Isaac Sim replay of the verified trajectory. This is a simulation scene, not a hardware experiment." %}
+<h2 id="assembly-replay">Assembly and alignment replay</h2>
+
+<figure>
+  <video class="w-100 rounded" controls playsinline preload="metadata" aria-label="Simulated xArm7 assembly and mirror alignment" poster="{{ '/assets/img/robot-optics-scene.png' | relative_url }}">
+    <source src="{{ '/assets/video/xarm7-michelson.mp4' | relative_url }}" type="video/mp4">
+  </video>
+  <figcaption class="caption">November 18, 2026 · 53 seconds at 5× speed · <a href="{{ '/assets/video/xarm7-michelson.mp4' | relative_url }}">Open MP4</a></figcaption>
+</figure>
+
+Starting with an empty work area, the arm places five components and picks up a fine alignment tool (FAT) modeled from its STEP design. A camera on the tool locates an ArUco marker on the mirror mount. The tool turns two adjusters through contact, using simulated detector readings to guide each correction. After the arm returns the tool, a final measurement checks whether the alignment holds.
+
+| November 18 simulation | Result |
+| --- | --- |
+| Components placed | 5 of 5, maximum planar error 1.345 mm |
+| Mirror adjustments | 12, with zero unintended contacts recorded |
+| Tool return position error | 1.347 mm |
+| Fringe visibility after tool return | 99.9959% on a 512 × 512 grid and 99.9958% on a 1024 × 1024 grid |
+
+These measurements come from one simulated trajectory. Hardware accuracy still requires calibration and physical testing. The [project repository](https://github.com/AIDROL/robot-arm-control) includes the replay and workflow. The full November 18 trajectory is archived locally.
 
 ## Perception and Manipulation
 
@@ -28,7 +47,7 @@ After assembling five components, the arm grasps a FAT with two motorized hex dr
 
 LightPipes evaluates the optical planes at their achieved poses. The verification uses an eight-phase reference scan and 16-bit detector images, followed by a new measurement after tool withdrawal and return. This distinguishes alignment while the tool is engaged from alignment retained after release.
 
-## Simulation Results
+## Earlier simulation results
 
 The archived **November 3, 2026** full run starts from an empty experiment area and completes assembly, contact adjustment, tool return, and independent audit.
 
@@ -44,9 +63,4 @@ The archived **November 3, 2026** full run starts from an empty experiment area 
 
 These results describe **one fixed-layout simulation**, not a cross-layout success rate or hardware accuracy. The cameras and coherent optical model are idealized; tool mechanics and transmission parameters are provisional. Placement uses a downward attraction proxy during release and ideal base holding at the achieved pose. Visibility values near 100% are physically clipped after fitting quantized images and do not imply perfect real-world alignment.
 
-## Code and Branches
-
-- [**main: integrated implementation and verified run**](https://github.com/AIDROL/robot-arm-control/tree/main) includes both simulation backends, the optical-feedback pipeline, and archived validation evidence.
-- [**vision-grasp-camera-player: development branch**](https://github.com/AIDROL/robot-arm-control/tree/vision-grasp-camera-player) contains the vision-guided grasping, camera-monitoring, and subsequent Michelson / Isaac development. Its work has been merged into `main`; the two branches have identical file contents at this update, rather than representing separate MuJoCo and Isaac versions.
-
-The [full validation report](https://github.com/AIDROL/robot-arm-control/blob/main/docs/isaac-michelson-validation-2026-11-03.md) documents acceptance criteria, measurements, modeling assumptions, and failed development runs. The [camera and optics viewer documentation](https://github.com/AIDROL/robot-arm-control/blob/main/docs/isaac-camera-optics-view.md) describes replay and sensor inspection.
+[November 3 validation report](https://github.com/AIDROL/robot-arm-control/blob/main/docs/isaac-michelson-validation-2026-11-03.md) · [Camera and optics viewer](https://github.com/AIDROL/robot-arm-control/blob/main/docs/isaac-camera-optics-view.md)

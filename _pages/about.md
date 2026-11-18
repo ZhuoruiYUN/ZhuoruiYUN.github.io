@@ -26,4 +26,4 @@ My current research focuses on **sim-to-real reinforcement learning**, agile rob
 
 I also build embedded robotic systems through the RoboMaster KongFu Team, a 4-DOF robotic arm teaching pendant, and a K230/CanMV vision-based ball-balancing cart for the National Undergraduate Electronics Design Contest.
 
-Email: zhuoruiyun040926 [AT] gmail.com
+Email: zhuoruiyun040926 [AT] gmail.com · [CV (PDF)]({{ "/assets/pdf/Zhuorui_YUN_CV.pdf" | relative_url }})
